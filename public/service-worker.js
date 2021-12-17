@@ -1,14 +1,16 @@
-var CACHE_BUDGET = "budget-cache-v1";
-var DATA_CACHE = "data-cache1";
+const CACHE_BUDGET = "budget-cache-v1";
+const DATA_CACHE = "data-cache1";
 
-var FILES_TO_CACHE = [
+const FILES_TO_CACHE = [
+  "/",
   "/index.html",
   "/index.js",
-  "/manifest.json",
+  "/manifest.webmanifest",
   "/service-worker.js",
   "/styles.css",
   "/icons/icon-192x192.png",
   "/icons/icon-512x512.png",
+  "/indexedDB.js",
 ];
 
 // install
@@ -43,7 +45,7 @@ self.addEventListener("fetch", (event) => {
     return;
   }
   event.respondWith(
-    fetch(event.request).cache(() => {
+    fetch(event.request).catch(() => {
       return caches.match(event.request).then((response) => {
         if (response) {
           return response;
