@@ -17,7 +17,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <!-- calling manifest -->
-    <link rel="manifest" href="/manifest.json" />
+    <link rel="manifest" href="manifest.webmanifest" />
 
     <title>Budget Tracker</title>
   </head>
@@ -56,6 +56,18 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <!-- calling indexedDB -->
+    <script src="indexedDB.js"></script>
     <script src="index.js"></script>
+    <script>
+      console.log(window, navigator);
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("service-worker.js").then((reg) => {
+            console.log("We found your service worker file!", reg);
+          });
+        });
+      }
+    </script>
   </body>
 </html>
