@@ -2,7 +2,7 @@
 ![License: MIT](https://img.shields.io/apm/l/vim-mode?style=for-the-badge)
 
 ## Description:
-Budget tracker is a Progressive Web Apllication which allows users to add expenses and deposits to their budgets with or without internet connection.
+Budget tracker is a Progressive Web Application that allows users to add expenses and deposits to their budgets with or without internet connection.
 <br/>
 When a transaction is added while offline, the application will populate the updated budget with the transaction when brought back online.
 <br/>
